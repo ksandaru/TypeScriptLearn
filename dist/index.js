@@ -52,4 +52,61 @@ const user1 = {
     name: 'john',
     age: 23
 };
-user1.id = 6;
+const add = (x, y) => x + y;
+console.log(add(2, 4));
+const subtract = (x, y) => x - y;
+console.log(subtract(4, 2));
+//classes---------------------------------------------
+class Person {
+    constructor(regId, street) {
+        this.regId = regId;
+        this.street = street;
+    }
+    register() {
+        return `The person registered with ${this.regId} lives in ${this.street}`;
+    }
+}
+const person1 = new Person(1, "London");
+const person2 = new Person(2, "Paris");
+const person3 = new Person(3, "Amsterdam");
+console.log(person1, person2, person3);
+console.log(person1.regId);
+console.log(person1.register());
+class Vehicle {
+    constructor(brand, model, year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+    manufacture() {
+        return `The ${this.model} of ${this.brand} has been manufactured in ${this.year} `;
+    }
+}
+const vehicle1 = new Vehicle("BMW", "S100", 2017);
+console.log(vehicle1.manufacture());
+//----------------------------------------------------
+//extend vehicle class by car sub-class
+class Car extends Vehicle {
+    constructor(brand, model, year, suspension, color) {
+        super(brand, model, year);
+        this.suspension = suspension;
+        this.color = color;
+    }
+    manufacture() {
+        return `${this.brand} has ${this.model} and it has ${this.suspension} suspension`;
+    }
+}
+const car1 = new Car("Audi", "A8", 2015, "auto", "black");
+console.log(car1.suspension);
+console.log(car1.brand);
+console.log(car1.manufacture());
+//generics>> used to make reusable components
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5, 6]);
+let nameArray = getArray(['don', 'brad', 'kan']);
+console.log(numArray);
+console.log(nameArray);
+numArray.push(7);
+console.log(numArray);
