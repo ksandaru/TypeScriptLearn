@@ -18,6 +18,9 @@ import {Profile} from "./Components/auth/Profile";
 import {List} from "./Components/generics/List";
 import {ObjectList} from "./Components/generics/ObjectList";
 import {RandomNumbers} from "./Components/props-restrictions/RandomNumbers";
+import {Toast} from "./Components/templateLiterals/Toast";
+import {Custombutton} from "./Components/html/Button";
+import {CustomComponent} from "./Components/html/CustomComponent";
 
 
 function App() {
@@ -88,6 +91,11 @@ function App() {
                 items={items}
                 onClick={(item)=>console.log(item)}/>
             <RandomNumbers value={10}  isPositive/>
+            <Toast position={'center'}/>
+            <Custombutton variant={'primary'} onClick={()=> console.log('clicked')}>
+                Primary Button
+            </Custombutton>
+            <CustomComponent firstname={'hello'} isLoggedin={false}/>
         </div>
     );
 }
